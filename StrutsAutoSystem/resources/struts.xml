@@ -13,7 +13,7 @@
 	<package name="default" extends="struts-default" namespace="/">
 		<action name="login"
 			class="action.LoginAction">
-			<result name="success">Welcome.jsp</result>
+			<result name="success">Top.jsp</result>
 			<result name="error">Login.jsp</result>
 		</action>
 	</package>
