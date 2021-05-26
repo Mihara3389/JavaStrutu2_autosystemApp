@@ -1,0 +1,13 @@
+create table struts2.users (
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(63) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  created_at datetime DEFAULT NULL,
+  updated_at datetime DEFAULT NULL,
+  deleteflag tinyint(1) DEFAULT 0 COMMENT "not deleted:0, delete:1",
+  deleted_at datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/** ユーザの追加 **/
+INSERT INTO users (id,name,password,created_at,updated_at,deleteflag) VALUES(1,'MIHARA','1234','2020-05-15 11:00:00','2020-05-15 11:00:00',0);
+INSERT INTO users (id,name,password,created_at,updated_at,deleteflag) VALUES(2,'SUZUKI','5678','2020-05-15 11:00:00','2020-05-15 11:00:00',0);
