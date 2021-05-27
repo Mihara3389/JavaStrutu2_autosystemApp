@@ -16,5 +16,10 @@
 			<result name="success">Top.jsp</result>
 			<result name="error">Login.jsp</result>
 		</action>
+		<action name="signup"
+			class="action.SignupAction">
+			<result name="success">Top.jsp</result>
+			<result name="error">Signup.jsp</result>
+		</action>
 	</package>
 </struts>
