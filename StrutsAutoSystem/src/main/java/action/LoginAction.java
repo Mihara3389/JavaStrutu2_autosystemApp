@@ -10,21 +10,23 @@ import dao.UsersDao;
 public class LoginAction extends ActionSupport {
 	private String name;
 	private String password;
-	private String errorMessage;
 
 	public String execute() {
 		try {
             UsersDao usersDao = new UsersDao();
             UserBean user =usersDao.getUser(name);
             if(user==null) {
-                return showMessage("ユーザ名は存在しないので、管理者へ連絡してください！");
+            	addActionError(getText("error.user"));
+    			return "error";
             }else if(!password.equals(user.getPassword())) {
-                return showMessage("パスワードは不正です！");
+            	addActionError(getText("error.pass"));
+    			return "error";
             }else {
                 return "success";
             }
         }catch(SQLException e) {
-            return showExceptionMessage("DBの例外が発生しました、管理者へ連絡してください！");
+        	addActionError(getText("error.sql"));
+        	return "error";
         }
 	}
 
@@ -39,19 +41,5 @@ public class LoginAction extends ActionSupport {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public String getErrorMessage() {
-        return errorMessage;
-    }
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
-    }
-	public String showMessage(String errorMessage) {
-        this.errorMessage=errorMessage;
-        return "error";
-    }
-    public String showExceptionMessage(String errorMessage) {
-        this.errorMessage=errorMessage;
-        return "error";
     }
 }

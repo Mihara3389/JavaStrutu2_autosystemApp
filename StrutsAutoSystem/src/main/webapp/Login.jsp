@@ -11,6 +11,11 @@
 <body>
     <h1>ログイン画面</h1>
     <hr>
+    <s:if test="hasActionErrors()">
+   		<div style="color:red">
+      		<s:actionerror/>
+   		</div>
+	</s:if>
     <div align="center">
         <s:form action="login" method="POST" name="form" theme="simple">
             <table>
