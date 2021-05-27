@@ -2,6 +2,8 @@ package action;
 
 import java.sql.SQLException;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.UserBean;
@@ -25,9 +27,11 @@ public class SignupAction extends ActionSupport {
             		UsersDao usersDao = new UsersDao();
             		UserBean user =usersDao.getUser(name);
             		if(user==null) {
+            			//入力パスワードのハッシュ化
+            			String hashedCode = BCrypt.hashpw(password, BCrypt.gensalt());
             			//ユーザ登録
             			SignupDao signupDao = new SignupDao();
-            			signupDao.updateUser(name,password);
+            			signupDao.updateUser(name,hashedCode);
             			return "success";
             		}else {
             			addActionError(getText("error.register"));

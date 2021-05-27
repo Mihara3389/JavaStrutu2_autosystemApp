@@ -2,6 +2,8 @@ package action;
 
 import java.sql.SQLException;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.UserBean;
@@ -18,11 +20,13 @@ public class LoginAction extends ActionSupport {
             if(user==null) {
             	addActionError(getText("error.user"));
     			return "error";
-            }else if(!password.equals(user.getPassword())) {
-            	addActionError(getText("error.pass"));
-    			return "error";
-            }else {
-                return "success";
+            }else{
+            	if(BCrypt.checkpw(password, user.getPassword())) {
+            		return "success";
+            	}else {
+            		addActionError(getText("error.pass"));
+            		return "error";
+            	}
             }
         }catch(SQLException e) {
         	addActionError(getText("error.sql"));
