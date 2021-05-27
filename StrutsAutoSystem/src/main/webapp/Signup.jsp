@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 </head>
 <body>
-    <h1>ログイン画面</h1>
+    <h1>ユーザ登録画面</h1>
     <hr>
     <s:if test="hasActionErrors()">
    		<div style="color:red">
@@ -16,7 +16,7 @@
    		</div>
 	</s:if>
     <div align="center">
-        <s:form action="login" method="POST" name="form" theme="simple">
+        <s:form action="signup" method="POST" name="form" theme="simple">
             <table>
                 <tr>
                     <td><s:text name="Username"/></td>
@@ -34,10 +34,10 @@
                 </tr>
             </table>
             <br>
-            <s:submit value="ログイン"></s:submit>
+            <s:submit value="登録"></s:submit>
         </s:form>
-    	<br>
-    	<s:a href="Signup.jsp">新規登録画面へ</s:a>
+        <br>
+        <s:a href="Login.jsp">ログイン画面へ</s:a>
     </div>
 </body>
 </html>

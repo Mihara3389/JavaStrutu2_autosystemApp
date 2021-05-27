@@ -12,9 +12,14 @@
 
 	<package name="default" extends="struts-default" namespace="/">
 		<action name="login"
-			class="net.viralpatel.struts2.LoginAction">
-			<result name="success">Welcome.jsp</result>
+			class="action.LoginAction">
+			<result name="success">Top.jsp</result>
 			<result name="error">Login.jsp</result>
+		</action>
+		<action name="signup"
+			class="action.SignupAction">
+			<result name="success">Top.jsp</result>
+			<result name="error">Signup.jsp</result>
 		</action>
 	</package>
 </struts>
