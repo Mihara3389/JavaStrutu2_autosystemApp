@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!-- Struts2のタグライブラリを使用可能にする -->
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!-- タイプ宣言はHTML5のものを使用する -->
@@ -20,14 +19,14 @@
         <s:form action="signup" method="POST" name="form" theme="simple">
             <table>
                 <tr>
-                    <td><s:text name="ユーザーID"/></td>
+                    <td><s:text name="Username"/></td>
                     <td><s:textfield name="name" 
-                    placeholder="ユーザ名"
+                    placeholder="ユーザーネーム"
                     maxlength="63"
                     onkeydown="eraseInfo();"/></td>
                 </tr>
                 <tr>
-                    <td><s:text name="パスワード" /></td>
+                    <td><s:text name="Password" /></td>
                     <td><s:password name="password" 
                     placeholder="パスワード"
                     value="" 
