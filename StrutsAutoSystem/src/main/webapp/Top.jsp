@@ -21,19 +21,23 @@
 		<s:submit value="ログアウト"></s:submit>
 	</s:form>
 	<div align="center">
-        <s:form action="top" method="POST" name="form" theme="simple">
             <table>
                 <tr>
-                    <td><input type="submit"  class ="button" name="list" value="問題と答えを確認・登録する　＞" ></td>
+                    <td><s:form action="list" method="POST" name="form" theme="simple">
+						<s:submit value="問題と答えを確認・登録する　＞"/>
+					</s:form></td>
                 </tr>
                 <tr>
-                    <td><input type="submit"  class ="button" name="test" value="テストをする　＞"></td>
+                   	<td><s:form action="test" method="POST" name="form" theme="simple">
+						<s:submit value="テストをする　＞"/>
+					</s:form></td>
                 </tr>
                 <tr>
-                	<td><input type="submit"  class ="button" name="history" value="過去の採点結果をみる　＞"></td>
+                    <td><s:form action="history" method="POST" name="form" theme="simple">
+						<s:submit value="過去の採点結果をみる　＞"/>
+					</s:form></td>
                 </tr>
             </table>
-        </s:form>
 	</div>
 </body>
 </html>
