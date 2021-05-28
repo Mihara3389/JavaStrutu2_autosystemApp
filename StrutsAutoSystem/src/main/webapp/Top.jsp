@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Top</h1>
-    <p> ${param.name}さん、ようこそ。</p>
+    <p><s:property value="#session.name"/>さん、ようこそ。</p>
     <hr>
     <s:if test="hasActionErrors()">
    		<div style="color:red">
