@@ -1,7 +1,9 @@
 package action;
 
 import java.sql.SQLException;
+import java.util.Map;
 
+import org.apache.struts2.interceptor.SessionAware;
 import org.mindrot.jbcrypt.BCrypt;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -10,9 +12,11 @@ import bean.UserBean;
 import dao.SignupDao;
 import dao.UsersDao;
 
-public class SignupAction extends ActionSupport {
+public class SignupAction extends ActionSupport implements SessionAware{
+	
 	private String name;
 	private String password;
+	private Map<String, Object> session;
 
 	public String execute() {
             if(name.isEmpty()|password.isEmpty()){
@@ -32,6 +36,8 @@ public class SignupAction extends ActionSupport {
             			//ユーザ登録
             			SignupDao signupDao = new SignupDao();
             			signupDao.updateUser(name,hashedCode);
+            			//セッションにユーザの名前格納
+            			session.put("name",name);
             			return "success";
             		}else {
             			addActionError(getText("error.register"));
@@ -56,4 +62,7 @@ public class SignupAction extends ActionSupport {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public void setSession(Map<String, Object> session) {
+        this.session = session;
+    }
 }
