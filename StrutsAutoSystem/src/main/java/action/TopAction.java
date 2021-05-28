@@ -12,9 +12,9 @@ public class TopAction extends ActionSupport implements SessionAware{
 	
 	public String execute() {
 		if(((String)session.get("name")).isEmpty()){
+			addActionError(getText("error.session"));
 			return "error";
 		}else {
-			addActionError(getText("error.session"));
 			return "success";
 		}
 	}
