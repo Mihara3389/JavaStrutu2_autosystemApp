@@ -24,5 +24,8 @@
 		<action name="logout" class="action.LogoutAction">
 			<result name="success">Login.jsp</result>
 		</action>
+		<action name="top" class="action.TopAction">
+			<result name="success">Login.jsp</result>
+		</action>
 	</package>
 </struts>
