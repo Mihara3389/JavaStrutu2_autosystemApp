@@ -2,6 +2,7 @@ package bean;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 //Serializableインターフェース
 public class HistoryBean implements Serializable {
@@ -12,8 +13,9 @@ public class HistoryBean implements Serializable {
     private int user_id;
     private int point;
     private Timestamp created_at;
+    private List<HistoryBean> historylist;
 
-    //引数無しのコンストラクタ
+	//引数無しのコンストラクタ
     public HistoryBean() {
     }
     
@@ -49,5 +51,12 @@ public class HistoryBean implements Serializable {
 		this.created_at = created_at;
 	}
 
+    public List<HistoryBean> getHistorylist() {
+		return historylist;
+	}
+
+	public void setHistorylist(List<HistoryBean> historylist) {
+		this.historylist = historylist;
+	}
 
 }

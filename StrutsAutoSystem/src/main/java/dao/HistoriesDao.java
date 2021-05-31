@@ -37,15 +37,15 @@ public class HistoriesDao {
         //結果の出力
         rs_2 = ps_2.executeQuery();
         //結果を格納
-        List<HistoryBean> histories = new ArrayList<HistoryBean>();
+        List<HistoryBean> historylist = new ArrayList<HistoryBean>();
         while (rs_2.next()) {        	
         	HistoryBean history = new HistoryBean();
         	history.setId(rs_2.getInt("id"));
         	history.setUser_id(rs_2.getInt("user_id"));
         	history.setPoint(rs_2.getInt("point"));
         	history.setCreated_at(rs_2.getTimestamp("created_at"));
-        	histories.add(history);
+        	historylist.add(history);
         }
-        return histories;
+        return historylist;
     }
 }
