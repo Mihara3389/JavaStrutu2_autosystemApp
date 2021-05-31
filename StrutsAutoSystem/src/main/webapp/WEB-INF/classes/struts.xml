@@ -21,5 +21,16 @@
 			<result name="success">Top.jsp</result>
 			<result name="error">Signup.jsp</result>
 		</action>
+		<action name="logout" class="action.LogoutAction">
+			<result name="success">Login.jsp</result>
+		</action>
+		<action name="top" class="action.TopAction">
+			<result name="success">Top.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+		<action name="history" class="action.HistoryAction">
+			<result name="success">History.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
 	</package>
 </struts>

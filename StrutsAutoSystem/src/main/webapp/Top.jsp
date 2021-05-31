@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<!-- Struts2のタグライブラリを使用可能にする -->
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<!-- タイプ宣言はHTML5のものを使用する -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,17 +9,35 @@
 <title>Topページ</title>
 </head>
 <body>
-    ${param.name}さん、ようこそ。
-</body>
-</html>
-	<div>
-		<input type="hidden"  name="action" value="logout" ><br>
-		<input type="submit"  value="logout" >
-	</div>
-	<div>
-		<input type="submit"  class ="button" name="list" value="問題と答えを確認・登録する　＞" ><br><br>
-		<input type="submit"  class ="button" name="test" value="テストをする　＞"><br><br>
-		<input type="submit"  class ="button" name="history" value="過去の採点結果をみる　＞"><br><br>
+    <h1>Top</h1>
+    <p><s:property value="#session.name"/>さん、ようこそ。</p>
+    <hr>
+    <s:if test="hasActionErrors()">
+   		<div style="color:red">
+      		<s:actionerror/>
+   		</div>
+	</s:if>
+	<s:form action="logout" method="POST" name="form" theme="simple">
+		<s:submit value="ログアウト"></s:submit>
+	</s:form>
+	<div align="center">
+            <table>
+                <tr>
+                    <td><s:form action="list" method="POST" name="form" theme="simple">
+						<s:submit value="問題と答えを確認・登録する　＞"/>
+					</s:form></td>
+                </tr>
+                <tr>
+                   	<td><s:form action="test" method="POST" name="form" theme="simple">
+						<s:submit value="テストをする　＞"/>
+					</s:form></td>
+                </tr>
+                <tr>
+                    <td><s:form action="history" method="POST" name="form" theme="simple">
+						<s:submit value="過去の採点結果をみる　＞"/>
+					</s:form></td>
+                </tr>
+            </table>
 	</div>
 </body>
 </html>

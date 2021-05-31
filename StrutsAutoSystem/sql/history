@@ -1,0 +1,15 @@
+*テーブル作成
+create table histories(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id int NOT NULL,
+    point int NOT NULL,
+    createed_at timestamp NOT NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+*データinsert
+INSERT INTO histories (id,user_id,point,created_at) VALUES(1,5,90,0);
+INSERT INTO histories (id,user_id,point,created_at) VALUES(2,7,80,0);
+INSERT INTO histories (id,user_id,point,created_at) VALUES(3,7,40,0);
+INSERT INTO histories (id,user_id,point,created_at) VALUES(4,5,90,0);
+INSERT INTO histories (id,user_id,point,created_at) VALUES(5,7,60,0);
+INSERT INTO histories (id,user_id,point,created_at) VALUES(6,5,90,0);
