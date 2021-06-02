@@ -13,7 +13,6 @@ public class TestAction extends ActionSupport{
 	private List<QuestionBean> questionlist;
 	public String execute() {
             	try {
-            		//ログインユーザからquestionlistデータを抜き出す
             		QuestionDao questionDao = new QuestionDao();
             		questionlist =questionDao.getQuestion();
             		if(questionlist.isEmpty()) {
