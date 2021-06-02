@@ -32,5 +32,9 @@
 			<result name="success">History.jsp</result>
 			<result name="error">Login.jsp</result>
 		</action>
+		<action name="test" class="action.TestAction">
+			<result name="success">Test.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
 	</package>
 </struts>
