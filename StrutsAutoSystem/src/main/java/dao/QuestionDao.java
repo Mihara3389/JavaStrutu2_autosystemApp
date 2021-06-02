@@ -16,7 +16,7 @@ public class QuestionDao {
     public  List<QuestionBean> getQuestion() throws SQLException {
         //dao.ConnectionDaoからデータベースへの接続を得る
         conn = ConnectionDao.getConnect();
-        //SQLステートメント、オブジェクトの作成(users)
+        //SQLステートメント、オブジェクトの作成
         String sql = "select * from questions";
         ps = conn.prepareStatement(sql);
         //結果の出力
