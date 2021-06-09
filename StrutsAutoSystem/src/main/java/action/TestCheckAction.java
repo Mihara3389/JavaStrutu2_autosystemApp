@@ -20,7 +20,6 @@ public class TestCheckAction extends ActionSupport implements SessionAware{
     private List<String> answer;
 	private List<AnswerBean> answerlist;
     private List<ResultBean> resultlist = new ArrayList<ResultBean>();
-	private String name;
 	private Map<String, Object> session;
 	public String execute() {
             	try {
@@ -81,14 +80,8 @@ public class TestCheckAction extends ActionSupport implements SessionAware{
         			return "error";
             	}
 	}
-	public List<String> getQuestion_id() {
-		return question_id;
-	}
 	public void setQuestion_id(List<String> question_id) {
 		this.question_id = question_id;
-	}
-	public List<String> getAnswer() {
-		return answer;
 	}
 	public void setAnswer(List<String> answer) {
 		this.answer = answer;
@@ -98,12 +91,6 @@ public class TestCheckAction extends ActionSupport implements SessionAware{
 	}
 	public void setResultlist(List<ResultBean> resultlist) {
 		this.resultlist = resultlist;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	public void setSession(Map<String, Object> session) {
         this.session = session;
