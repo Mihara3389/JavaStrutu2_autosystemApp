@@ -18,7 +18,7 @@ public class HistoriesDao {
     public  List<HistoryBean> getHistory(String name) throws SQLException {
         //dao.ConnectionDaoからデータベースへの接続を得る
         conn = ConnectionDao.getConnect();
-        //SQLステートメント、オブジェクトの作成(users)
+        //SQLステートメント、オブジェクトの作成
         String sql = "select * from users where name = ?";
         ps = conn.prepareStatement(sql);
         ps.setString(1, name);
