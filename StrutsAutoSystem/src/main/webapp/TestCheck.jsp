@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Testページ</title>
+<title>TestCheckページ</title>
 </head>
 <body>
-    <h1>Test</h1>
+    <h1>TestCheck</h1>
     <p><s:property value="#session.name"/>さん、ようこそ。</p>
     <hr>
     <s:if test="hasActionErrors()">
@@ -25,22 +25,12 @@
 		<s:submit value="トップ"></s:submit>
 	</s:form>
 	<div align="center">
-	<s:form action="testCheck" method="POST" name="form" theme="simple">
-	<table>
-	<s:iterator value="questionlist">
-	   <tr>
-			<td><s:property value="id"/><s:hidden name="question_id" value="%{id}"/>
-			<td><s:property value="question"/></td>   
-		</tr>
-    	<tr>
-    		<td class=center><label id="title" >回答</label></td>
-			<td><s:textfield name="answer" /></td>    
-  		</tr>
-    </s:iterator> 
-	</table>
-	<br>
-		<s:submit value="Check"/>
-	</s:form>
-   	</div>
+	<s:iterator value="resultlist">
+    	<s:property value="#session.name"/>さん<br>
+    	<s:property value="total_question"/>問中<s:property value="correct_answer"/>問正解です<br>
+    	<s:property value="result"/>点でした。<br>
+    	<s:property value="created_at"/>
+   	</s:iterator> 
+	</div>
 	</body>
 </html>

@@ -36,5 +36,9 @@
 			<result name="success">Test.jsp</result>
 			<result name="error">Login.jsp</result>
 		</action>
+		<action name="testCheck" class="action.TestCheckAction">
+			<result name="success">TestCheck.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
 	</package>
 </struts>
