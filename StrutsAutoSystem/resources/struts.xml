@@ -40,5 +40,9 @@
 			<result name="success">TestCheck.jsp</result>
 			<result name="error">Login.jsp</result>
 		</action>
+		<action name="list" class="action.ListAction">
+			<result name="success">List.jsp</result>
+			<result name="error">Register.jsp</result>
+		</action>
 	</package>
 </struts>
