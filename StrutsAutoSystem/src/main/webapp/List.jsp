@@ -27,7 +27,7 @@
 	<div align="center">
 	<table>
 		<s:iterator value="list">
-		<s:if test="%{answer_count==1}">
+		<s:if test="answer_count==1">
 		<tr>
 			<td>問題：</td>
 			<td><s:property value="id"/></td>
@@ -46,7 +46,7 @@
 		</tr>
 		</s:if>	
    		<tr>
-			<td><s:if test="%{answer_count==1}">答え：</s:if></td>
+			<td><s:if test="answer_count==1">答え：</s:if></td>
 			<td><s:property value="answer_count"/></td>
 			<td><s:property value="answer"/></td>
 			<td></td>
